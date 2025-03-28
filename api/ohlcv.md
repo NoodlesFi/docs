@@ -8,11 +8,6 @@ The OHLC API provides OHLCV (Open, High, Low, Close, Volume) data for a given to
 GET /api/v1/partner/ohlcv
 ```
 
-## Base URL
-```
-Staging: https://api-staging.noodles.fi
-Production: https://api.noodles.fi
-```
 
 ## Request Parameters
 

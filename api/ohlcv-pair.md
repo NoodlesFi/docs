@@ -1,6 +1,4 @@
----
-icon: network-wired
----
+
 # OHLCV-Pair API
 
 ## Overview
@@ -11,11 +9,6 @@ The OHLC-Pair API provides OHLCV (Open, High, Low, Close, Volume) data for a giv
 GET /api/v1/partner/ohlcv-pair
 ```
 
-## Base URL
-```
-Staging: https://api-staging.noodles.fi
-Production: https://api.noodles.fi
-```
 
 ## Request Parameters
 

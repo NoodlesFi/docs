@@ -1,6 +1,3 @@
----
-icon: hand-wave
----
 
 <figure><img src="media/Banner_Noodles.png" alt=""><figcaption></figcaption></figure>
 

@@ -7,4 +7,4 @@
 
 ## API
 * [OHLCV-Pair](api/ohlcv-pair.md)
-* [Token](api/ohlcv-pair.md)
+* [OHLC](api/ohlcv.md)

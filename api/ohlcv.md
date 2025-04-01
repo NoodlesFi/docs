@@ -19,7 +19,7 @@ GET /api/v1/partner/ohlcv
 
 ## Request Example
 ```sh
-curl --location 'https://api.noodles.fi/api/v1/partner/ohlcv?coin_type=0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881%3A%3Acoin%3A%3ACOIN&bucketMinute=15&to=1741513193&limit=329' \
+curl --location 'https://api.noodles.fi/api/v1/partner/ohlcv?coin_id=0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881%3A%3Acoin%3A%3ACOIN&bucket=15&to=1741513193&limit=329' \
 --header 'Accept-Encoding: application/json' \
 --header 'x-api-key: YOUR_API_KEY'
 ```

@@ -8,70 +8,59 @@ The OHLC API provides OHLCV (Open, High, Low, Close, Volume) data for a given to
 GET /api/v1/partner/ohlcv
 ```
 
+## Parameters
+| Parameter  | Type   | Description | Required |
+|------------|--------|-------------|----------|
+| `coin_id`   | String | The coin identifier. | No |
+| `bucket`   | Integer | The time bucket size in minutes. | No |
+| `from`     | Integer | Start timestamp (Unix time). | No |
+| `to`       | Integer | End timestamp (Unix time). | No |
+| `limit`    | Integer | The maximum number of bucket to return. | No |
 
-## Request Parameters
-
-| Parameter     | Type   | Required | Description |
-|--------------|--------|----------|-------------|
-| `coin_type`  | string | Yes      | The token type, represented in a specific format. Example: `0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881::coin::COIN` |
-| `bucketMinute` | int  | Yes      | Time bucket size in minutes (e.g., `240` for 4-hour intervals). |
-| `from`       | string | Yes      | Start timestamp in ISO 8601 format (e.g., `2023-06-22T09:39:53Z`). |
-| `to`         | string | Yes      | End timestamp in ISO 8601 format (e.g., `2025-03-09T09:39:53Z`). |
-| `limit`      | int    | No       | Maximum number of data points to return. Default: 100. |
-
-## Headers
-
-| Header         | Required | Description |
-|---------------|----------|-------------|
-| `Accept-Encoding` | No  | Suggested value: `application/json`. |
-| `x-api-key`   | Yes     | API key for authentication. |
-
-## Example Request
-
+## Request Example
 ```sh
-curl --location 'https://api-staging.noodles.fi/api/v1/partner/ohlcv?coin_type=0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881%3A%3Acoin%3A%3ACOIN&bucketMinute=240&from=2023-06-22T09%3A39%3A53Z&to=2025-03-09T09%3A39%3A53Z&limit=329' \
+curl --location 'https://api.noodles.fi/api/v1/partner/ohlcv?coin_type=0x027792d9fed7f9844eb4839566001bb6f6cb4804f66aa2da6fe1ee242d896881%3A%3Acoin%3A%3ACOIN&bucketMinute=15&to=1741513193&limit=329' \
 --header 'Accept-Encoding: application/json' \
 --header 'x-api-key: YOUR_API_KEY'
 ```
 
-## Response
-
-### Success Response
-
+## Response Format
 ```json
 {
     "data": [
-        {
-            "t": "2025-01-13T16:00:00Z",
-            "ohlcv": [
-                92373.55683931554,
-                92599.21711082783,
-                91284.1439397996,
-                92132.05740023508,
-                165996.02019695172
-            ]
-        },
-        {
-            "t": "2025-01-13T20:00:00Z",
-            "ohlcv": [
-                92132.05740023508,
-                93919.00101274817,
-                91893.93648733592,
-                93685.67657255827,
-                109096.25048818799
-            ]
-        }
+        [
+            1701857700,
+            1.7467633222351549e-7,
+            1.7467633222351549e-7,
+            1.7178829066103107e-7,
+            1.7178829066103107e-7,
+            268.0347809207526,
+            5101.582571424068
+        ],
+        [
+            1701858600,
+            1.7178829066103107e-7,
+            1.7223573417271332e-7,
+            1.711429546004599e-7,
+            1.711429546004599e-7,
+            0,
+            2151.777993731664
+        ]
     ]
 }
 ```
 
-### Response Data Format
-Each data entry is an object with the following structure:
+## Response Fields
 
-| Field | Type   | Description |
-|-------|--------|-------------|
-| `t`   | string | Timestamp in ISO 8601 format. |
-| `ohlcv` | array | OHLCV values in the following order: Open, High, Low, Close, Volume. |
+| Index | Field     | Description |
+|-------|----------|-------------|
+| 0     | `timestamp` | Unix timestamp for the bucket period. |
+| 1     | `open`       | The opening price. |
+| 2     | `high`       | The highest price. |
+| 3     | `low`        | The lowest price.  |
+| 4     | `close`      | The closing price. |
+| 5     | `volume`   | Trading volume. |
+
 
 ## Error Responses
 
@@ -100,11 +89,7 @@ Each data entry is an object with the following structure:
 ```
 
 ## Notes
-- The API key for the Pro plan will have a higher rate limit and access to more APIs.
-- The `from` and `to` timestamps should be within a reasonable range to avoid performance issues. If the `from` and `to` range is too large, the data will automatically be truncated to a maximum of 500 buckets.
-- The API response is optimized for speed and may include only the most relevant data points based on the `limit` parameter.
-
+- The response is optimized for speed and may include only the most recent bucket that has trades, ignoring some buckets.
 ---
 
-_Last updated: March 2025_
 

@@ -30,7 +30,7 @@ GET /api/v1/partner/ohlcv-pair
 ## Example Request
 
 ```sh
-curl --location 'https://api-staging.noodles.fi/api/v1/partner/ohlcv-pair?coin_a=0x06864a6f921804860930db6ddbe2e16acdf8504495ea7481637a1c8b9a8fe54b%3A%3Acetus%3A%3ACETUS&coin_b=0x2%3A%3Asui%3A%3ASUI&bucket=60&from=1717113600&to=1743120000&limit=20' \
+curl --location 'https://api.noodles.fi/api/v1/partner/ohlcv-pair?coin_a=0x06864a6f921804860930db6ddbe2e16acdf8504495ea7481637a1c8b9a8fe54b%3A%3Acetus%3A%3ACETUS&coin_b=0x2%3A%3Asui%3A%3ASUI&bucket=60&from=1717113600&to=1743120000' \
 --header 'Accept-Encoding: application/json' \
 --header 'x-api-key: YOUR_API_KEY'
 ```
@@ -109,6 +109,4 @@ Each data entry is an array with the following structure:
 - The API response is optimized for speed and may include only the most relevant data points based on the `limit` parameter.
 
 ---
-
-_Last updated: March 2025_
 

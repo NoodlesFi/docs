@@ -9,3 +9,6 @@
 * [Environment Setup](api/environment.md)
 * [OHLCV-Pair](api/ohlcv-pair.md)
 * [OHLC](api/ohlcv.md)
+
+## Tv Widget
+* [Tv Widget](frontend/tv-widget.md)

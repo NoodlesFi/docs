@@ -9,13 +9,19 @@ GET /api/v1/partner/ohlcv
 ```
 
 ## Parameters
-| Parameter  | Type   | Description | Required |
-|------------|--------|-------------|----------|
-| `coin_id`   | String | The coin identifier. | No |
-| `bucket`   | Integer | The time bucket size in minutes. | No |
-| `from`     | Integer | Start timestamp (Unix time). | No |
-| `to`       | Integer | End timestamp (Unix time). | No |
-| `limit`    | Integer | The maximum number of bucket to return. | No |
+| Parameter  |  Type   | Required | Description | 
+|------------|---------|----------|-------------|
+| `coin_id`  | String  | Yes | The coin identifier. |
+| `bucket`   | Integer | Yes | The time bucket size in minutes. Choices are:  1, 5, 15, 60(1 hour), 240(4 hours) , 1440 (1 day) |
+| `from`     | Integer | No  | Start timestamp (Unix time). |
+| `to`       | Integer | No  | End timestamp (Unix time). |
+| `limit`    | Integer | No  | The maximum number of bucket to return. Max value: 500, Default value: 500 |
+
+## Headers
+
+| Header        | Required | Description |
+|---------------|----------|-------------|
+| `x-api-key`   | No     | API key for authentication. Contact richard@noodles.fi for PRO Plan |
 
 ## Request Example
 ```sh

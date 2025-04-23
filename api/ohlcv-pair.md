@@ -25,7 +25,7 @@ GET /api/v1/partner/ohlcv-pair
 
 | Header         | Required | Description |
 |---------------|----------|-------------|
-| `x-api-key`   | No     | API key for authentication. Contact richard@noodles.fi for PRO Plan |
+| `x-api-key`   | No     | API key for authentication. |
 
 ## Example Request
 

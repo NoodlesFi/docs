@@ -60,10 +60,10 @@ POST /api/v1/partner/coin-trending
 |--------------------|----------|-------------|
 | `data`             | `array`  | List of trending coin objects. |
 | ├─ `coin_type`     | `string` | Coin Identifier |
-| ├─ `name`          | `string` | Name of the token. |
-| ├─ `symbol`        | `string` | Symbol of the token. |
-| ├─ `logo`          | `string` | URL to the token's logo. |
-| ├─ `price`         | `string` | Current price of the token. |
+| ├─ `name`          | `string` | Name of the coin. |
+| ├─ `symbol`        | `string` | Symbol of the coin. |
+| ├─ `logo`          | `string` | URL to the coin's logo. |
+| ├─ `price`         | `string` | Current price of the coin. |
 | ├─ `price_change_1h` | `number` | % price change in the last hour. |
 | ├─ `price_change_6h` | `number` | % price change in the last 6 hours. |
 | ├─ `price_change_1d` | `number` | % price change in the last 24 hours. |
@@ -73,9 +73,9 @@ POST /api/v1/partner/coin-trending
 | ├─ `market_cap`    | `string` | Market cap. |
 | ├─ `liquidity_usd` | `string` | Liquidity in USD. |
 | ├─ `circulating_supply` | `string` | Circulating supply. |
-| ├─ `total_supply`  | `string` | Total token supply. |
+| ├─ `total_supply`  | `string` | Total coin supply. |
 | ├─ `published_at`  | `string` | Created time of the coin (RFC3339 format). |
-| └─ `verified`      | `boolean`| Indicates if the token is verified by Blockvision. |
+| └─ `verified`      | `boolean`| Indicates if the coin is verified by Blockvision. |
 | `pagination`       | `object` | Pagination object (limit & offset). |
 
 ### Success Response

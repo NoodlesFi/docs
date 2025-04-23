@@ -2,7 +2,7 @@
 # OHLCV-Pair API
 
 ## Overview
-The OHLC-Pair API provides OHLCV (Open, High, Low, Close, Volume) data for a given pair of tokens over a specified time range and bucket size.
+The OHLC-Pair API provides OHLCV (Open, High, Low, Close, Volume) data for a given pair of coins over a specified time range and bucket size.
 
 ## Endpoint
 ```
@@ -14,8 +14,8 @@ GET /api/v1/partner/ohlcv-pair
 
 | Parameter   | Type   | Required | Description |
 |------------|--------|----------|-------------|
-| `coin_a`   | string | Yes      | The first token in the pair, represented in a specific format. Example: `0x06864a6f921804860930db6ddbe2e16acdf8504495ea7481637a1c8b9a8fe54b::cetus::CETUS` |
-| `coin_b`   | string | Yes      | The second token in the pair, represented in a specific format. Example: `0x2::sui::SUI` |
+| `coin_a`   | string | Yes      | The first coin in the pair, represented in a specific format. Example: `0x06864a6f921804860930db6ddbe2e16acdf8504495ea7481637a1c8b9a8fe54b::cetus::CETUS` |
+| `coin_b`   | string | Yes      | The second coin in the pair, represented in a specific format. Example: `0x2::sui::SUI` |
 | `bucket`   | int    | Yes      | Time bucket size in minutes (e.g., `60` for 1-hour intervals). Choices are:  1, 5, 15, 60(1 hour), 240(4 hours) , 1440 (1 day) |
 | `from`     | int    | No      | Start timestamp (Unix epoch time in seconds). |
 | `to`       | int    | No      | End timestamp (Unix epoch time in seconds). Default value: Now() |

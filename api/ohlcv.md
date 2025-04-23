@@ -1,7 +1,7 @@
 # OHLC API
 
 ## Overview
-The OHLC API provides OHLCV (Open, High, Low, Close, Volume) data for a given token over a specified time range and bucket size.
+The OHLC API provides OHLCV (Open, High, Low, Close, Volume) data for a given coin over a specified time range and bucket size.
 
 ## Endpoint
 ```

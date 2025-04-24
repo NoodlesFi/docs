@@ -67,6 +67,9 @@ POST /api/v1/partner/coin-trending
 | ├─ `price_change_1h` | `number` | % price change in the last hour. |
 | ├─ `price_change_6h` | `number` | % price change in the last 6 hours. |
 | ├─ `price_change_1d` | `number` | % price change in the last 24 hours. |
+| ├─ `vol_change_1d` | `number` | % volume change in the last 24 hours. |
+| ├─ `liq_change_1d` | `number` | % liquidity of coin (usd) change in the last 24 hours. |
+| ├─ `tx_change_1d` | `number` | % Number of transactions change in the last 24 hours. |
 | ├─ `tx_24h`        | `number` | Number of transactions in 24h. |
 | ├─ `volume_24h`    | `string` | Trading volume in 24h. |
 | ├─ `maker_24h`     | `number` | Number of makers in 24h. |
@@ -92,6 +95,9 @@ POST /api/v1/partner/coin-trending
       "price_change_1h": 1.62,
       "price_change_6h": -5.8,
       "price_change_1d": 65.55,
+      "vol_change_1d": 0.47,
+      "liq_change_1d": -2.93,
+      "tx_change_1d": -10.74,
       "tx_24h": 127896,
       "volume_24h": "60237087",
       "maker_24h": 10333,
@@ -111,6 +117,9 @@ POST /api/v1/partner/coin-trending
       "price_change_1h": 2.47,
       "price_change_6h": 1.89,
       "price_change_1d": 21,
+      "vol_change_1d": 35.28,
+      "liq_change_1d": -26.24,
+      "tx_change_1d": -4.22,
       "tx_24h": 379,
       "volume_24h": "9057",
       "maker_24h": 73,

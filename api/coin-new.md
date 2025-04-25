@@ -1,16 +1,13 @@
 
-# Coin Trending API
+# Coin Top API
 
-Retrieve a list of trending coins based on a given time period (last 30 minutes, 1 hour, 6 hours, 24 hours).
-
-The formular of trending coin please contact: [@hiephho](https://t.me/hiephho)
+Retrieve a list of new coins based on their published time of the coin. Coins with less than $1 liquidity will be hidden from this list.
 
 ## Endpoint
 
 ```http
-POST /api/v1/partner/coin-trending
+POST /api/v1/partner/coin-new
 ```
-
 
 
 ## Request Body
@@ -22,7 +19,6 @@ POST /api/v1/partner/coin-trending
 | `pagination`     | `object`  | No       | Pagination |
 | ├─ `limit`       | `number`  | No       | Max number of items to return. Default: `20`, Max: `40`. |
 | └─ `offset`      | `number`  | No       | Index to start the results from. Default: `0`. |
-| `score_period`   | `string`  | Yes      | Period trending score. Choices are: `30m`, `1h`, `6h` `24h`. |
 | `filters`        | `object`  | No       | Filters |
 | └─ `coin_ids`    | `string[]`| No       | Array of coin_id to filter (use to filter favorite coins). |
 
@@ -31,19 +27,16 @@ POST /api/v1/partner/coin-trending
 
 ```json
 {
-  "pagination": {
-    "limit": 10,
-    "offset": 0
-  },
-  "score_period": "24h",
-  "filters": {
-    "coin_ids": [
-      "0x32a976482bf4154961bf20bfa3567a80122fdf8e8f8b28d752b609d8640f7846::miu::MIU",
-      "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP"
-    ]
-  }
+    "pagination": {
+        "offset": 0,
+        "limit": 40
+    },
+    "filters": {
+        "coin_ids": ["0xb06a3f707841a749ffb421660d020f9f995cba77f60871db46d425d1c8f54c9f::popepe::POPEPE", "0xb4604e1101a2a696a20f9a1e53518c2c3dbb06614f8d65e31b88f81af7169733::groksui::GROKSUI"]
+    } 
 }
 ```
+
 ## Headers
 
 | Header         | Required | Description |
@@ -80,60 +73,61 @@ POST /api/v1/partner/coin-trending
 | └─ `verified`      | `boolean`| Indicates if the coin is verified by Blockvision. |
 | `pagination`       | `object` | Pagination object (limit & offset). |
 
+
 ### Success Response
 
 ```json
 {
-  "data": [
-    {
-      "coin_type": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP",
-      "name": "DeepBook Token",
-      "symbol": "DEEP",
-      "logo": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/DEEP_BlueBackground.png/public",
-      "price": "0.203",
-      "price_change_1h": 1.62,
-      "price_change_6h": -5.8,
-      "price_change_1d": 65.55,
-      "vol_change_1d": 0.47,
-      "liq_change_1d": -2.93,
-      "tx_change_1d": -10.74,
-      "tx_24h": 127896,
-      "volume_24h": "60237087",
-      "maker_24h": 10333,
-      "market_cap": "507158997",
-      "liquidity_usd": "3051739",
-      "circulating_supply": "2500000000",
-      "total_supply": "9992870898",
-      "published_at": "2024-03-28T13:18:43.56Z",
-      "verified": true
-    },
-    {
-      "coin_type": "0x32a976482bf4154961bf20bfa3567a80122fdf8e8f8b28d752b609d8640f7846::miu::MIU",
-      "name": "MIU",
-      "symbol": "MIU",
-      "logo": "https://miucoin.io/favicon.ico",
-      "price": "0.0000000795",
-      "price_change_1h": 2.47,
-      "price_change_6h": 1.89,
-      "price_change_1d": 21,
-      "vol_change_1d": 35.28,
-      "liq_change_1d": -26.24,
-      "tx_change_1d": -4.22,
-      "tx_24h": 379,
-      "volume_24h": "9057",
-      "maker_24h": 73,
-      "market_cap": "71588006",
-      "liquidity_usd": "17533",
-      "circulating_supply": "900000000000000",
-      "total_supply": "900000000000000",
-      "published_at": "2024-12-03T15:37:33.334Z",
-      "verified": true
+    "data": [
+        {
+            "coin_type": "0xb06a3f707841a749ffb421660d020f9f995cba77f60871db46d425d1c8f54c9f::popepe::POPEPE",
+            "name": "Vatican New Pope",
+            "symbol": "POPEPE",
+            "logo": "https://dd.dexscreener.com/ds-data/tokens/solana/GiGfQSPdzEvtggnzN8YHwB56EoeAYDyRsdfe5d22pump.png?size=lg&key=1cfc1c",
+            "price": "0.0000221",
+            "price_change_1h": 0,
+            "price_change_6h": 0,
+            "price_change_1d": 2.65,
+            "vol_change_1d": 10.2,
+            "liq_change_1d": 0,
+            "tx_change_1d": 0,
+            "tx_24h": 0,
+            "volume_24h": "0",
+            "maker_24h": 0,
+            "market_cap": "0",
+            "liquidity_usd": "0",
+            "circulating_supply": "0",
+            "total_supply": "0",
+            "published_at": "2025-04-21T08:39:20.777Z",
+            "verified": false
+        },
+        {
+            "coin_type": "0xb4604e1101a2a696a20f9a1e53518c2c3dbb06614f8d65e31b88f81af7169733::groksui::GROKSUI",
+            "name": "GROKSUI",
+            "symbol": "GROKSUI",
+            "logo": "https://movepump.com/_next/image?url=https%3A%2F%2Fapi.movepump.com%2Fuploads%2F0_G_Roke_robot_surfing_f7994d3dae.png&w=640&q=75",
+            "price": "0.0000234",
+            "price_change_1h": 0,
+            "price_change_6h": 0,
+            "price_change_1d": 117.58,
+            "vol_change_1d": 0,
+            "liq_change_1d": 3.12,
+            "tx_change_1d": 0,
+            "tx_24h": 0,
+            "volume_24h": "0",
+            "maker_24h": 0,
+            "market_cap": "0",
+            "liquidity_usd": "0",
+            "circulating_supply": "0",
+            "total_supply": "0",
+            "published_at": "2025-04-21T01:59:13.777Z",
+            "verified": false
+        }
+    ],
+    "pagination": {
+        "limit": 2,
+        "offset": 0
     }
-  ],
-  "pagination": {
-    "limit": 2,
-    "offset": 0
-  }
 }
 ```
 

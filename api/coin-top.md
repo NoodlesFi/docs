@@ -1,16 +1,13 @@
 
-# Coin Trending API
+# Coin Top API
 
-Retrieve a list of trending coins based on a given time period (last 30 minutes, 1 hour, 6 hours, 24 hours).
-
-The formular of trending coin please contact: [@hiephho](https://t.me/hiephho)
+Retrieve a list of top coins base on volume USD in 24h
 
 ## Endpoint
 
 ```http
-POST /api/v1/partner/coin-trending
+POST /api/v1/partner/coin-top
 ```
-
 
 
 ## Request Body
@@ -22,7 +19,6 @@ POST /api/v1/partner/coin-trending
 | `pagination`     | `object`  | No       | Pagination |
 | ├─ `limit`       | `number`  | No       | Max number of items to return. Default: `20`, Max: `40`. |
 | └─ `offset`      | `number`  | No       | Index to start the results from. Default: `0`. |
-| `score_period`   | `string`  | Yes      | Period trending score. Choices are: `30m`, `1h`, `6h` `24h`. |
 | `filters`        | `object`  | No       | Filters |
 | └─ `coin_ids`    | `string[]`| No       | Array of coin_id to filter (use to filter favorite coins). |
 
@@ -35,7 +31,6 @@ POST /api/v1/partner/coin-trending
     "limit": 10,
     "offset": 0
   },
-  "score_period": "24h",
   "filters": {
     "coin_ids": [
       "0x32a976482bf4154961bf20bfa3567a80122fdf8e8f8b28d752b609d8640f7846::miu::MIU",
@@ -44,6 +39,7 @@ POST /api/v1/partner/coin-trending
   }
 }
 ```
+
 ## Headers
 
 | Header         | Required | Description |
@@ -80,60 +76,61 @@ POST /api/v1/partner/coin-trending
 | └─ `verified`      | `boolean`| Indicates if the coin is verified by Blockvision. |
 | `pagination`       | `object` | Pagination object (limit & offset). |
 
+
 ### Success Response
 
 ```json
 {
-  "data": [
-    {
-      "coin_type": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP",
-      "name": "DeepBook Token",
-      "symbol": "DEEP",
-      "logo": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/DEEP_BlueBackground.png/public",
-      "price": "0.203",
-      "price_change_1h": 1.62,
-      "price_change_6h": -5.8,
-      "price_change_1d": 65.55,
-      "vol_change_1d": 0.47,
-      "liq_change_1d": -2.93,
-      "tx_change_1d": -10.74,
-      "tx_24h": 127896,
-      "volume_24h": "60237087",
-      "maker_24h": 10333,
-      "market_cap": "507158997",
-      "liquidity_usd": "3051739",
-      "circulating_supply": "2500000000",
-      "total_supply": "9992870898",
-      "published_at": "2024-03-28T13:18:43.56Z",
-      "verified": true
-    },
-    {
-      "coin_type": "0x32a976482bf4154961bf20bfa3567a80122fdf8e8f8b28d752b609d8640f7846::miu::MIU",
-      "name": "MIU",
-      "symbol": "MIU",
-      "logo": "https://miucoin.io/favicon.ico",
-      "price": "0.0000000795",
-      "price_change_1h": 2.47,
-      "price_change_6h": 1.89,
-      "price_change_1d": 21,
-      "vol_change_1d": 35.28,
-      "liq_change_1d": -26.24,
-      "tx_change_1d": -4.22,
-      "tx_24h": 379,
-      "volume_24h": "9057",
-      "maker_24h": 73,
-      "market_cap": "71588006",
-      "liquidity_usd": "17533",
-      "circulating_supply": "900000000000000",
-      "total_supply": "900000000000000",
-      "published_at": "2024-12-03T15:37:33.334Z",
-      "verified": true
+    "data": [
+        {
+            "coin_type": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP",
+            "name": "DeepBook Token",
+            "symbol": "DEEP",
+            "logo": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/DEEP_BlueBackground.png/public",
+            "price": "0.0947",
+            "price_change_1h": 0.08,
+            "price_change_6h": 6.31,
+            "price_change_1d": 6.24,
+            "vol_change_1d": -47.62,
+            "liq_change_1d": 47.49,
+            "tx_change_1d": -40.16,
+            "tx_24h": 79491,
+            "volume_24h": "32805870",
+            "maker_24h": 10524,
+            "market_cap": "236635701",
+            "liquidity_usd": "4310216",
+            "circulating_supply": "2500000000",
+            "total_supply": "9992870898",
+            "published_at": "2024-03-28T13:18:43.56Z",
+            "verified": true
+        },
+        {
+            "coin_type": "0x32a976482bf4154961bf20bfa3567a80122fdf8e8f8b28d752b609d8640f7846::miu::MIU",
+            "name": "MIU",
+            "symbol": "MIU",
+            "logo": "https://miucoin.io/favicon.ico",
+            "price": "0.0000000645",
+            "price_change_1h": 0,
+            "price_change_6h": 0.43,
+            "price_change_1d": 0.01,
+            "vol_change_1d": -27.63,
+            "liq_change_1d": 0.82,
+            "tx_change_1d": 4.04,
+            "tx_24h": 386,
+            "volume_24h": "6773",
+            "maker_24h": 65,
+            "market_cap": "58074718",
+            "liquidity_usd": "17540",
+            "circulating_supply": "900000000000000",
+            "total_supply": "900000000000000",
+            "published_at": "2024-12-03T15:37:33.334Z",
+            "verified": true
+        }
+    ],
+    "pagination": {
+        "limit": 10,
+        "offset": 0
     }
-  ],
-  "pagination": {
-    "limit": 2,
-    "offset": 0
-  }
 }
 ```
 

@@ -35,9 +35,13 @@ https://noodles.fi/tv-widget?coin=<COIN_ID>&theme=<light|dark>
 | `theme` | False    | `light` (default) or `dark` UI theme         |
 
 **Example:**
+
+[stSUI OHLC](https://noodles.fi/tv-widget?coin=0xd1b72982e40348d069bb1ff701e634c117bb5f741f44dff91e472d3b01461e55::stsui::STSUI&theme=dark)
+
+
 ```html
 <iframe
-  src="https://noodles.fi/tv-widget?coin=0xd1b72982e40348d069bb1ff701e634c117bb5f741f44dff91e472d3b01461e55::stsui::STSUIC&theme=dark"
+  src="https://noodles.fi/tv-widget?coin=0xd1b72982e40348d069bb1ff701e634c117bb5f741f44dff91e472d3b01461e55::stsui::STSUI&theme=dark"
   width="100%"
   height="500"
   frameborder="0"
@@ -66,6 +70,9 @@ https://noodles.fi/tv-widget?coinA=<COIN_A_ID>&coinB=<COIN_B_ID>&theme=<light|da
 
 
 **Example:**
+
+[DEEP/SUI](https://noodles.fi/tv-widget?coinA=0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP&coinB=0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI&theme=dark)
+
 ```html
 <iframe
   src="https://noodles.fi/tv-widget?coinA=0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP&coinB=0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI&theme=dark"

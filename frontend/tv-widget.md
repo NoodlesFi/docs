@@ -36,7 +36,7 @@ https://noodles.fi/tv-widget?coin=<COIN_ID>&theme=<light|dark>
 
 **Example:**
 
-[stSUI OHLC](https://noodles.fi/tv-widget?coin=0xd1b72982e40348d069bb1ff701e634c117bb5f741f44dff91e472d3b01461e55::stsui::STSUI&theme=dark)
+[stSUI/USD](https://noodles.fi/tv-widget?coin=0xd1b72982e40348d069bb1ff701e634c117bb5f741f44dff91e472d3b01461e55::stsui::STSUI&theme=dark)
 
 
 ```html

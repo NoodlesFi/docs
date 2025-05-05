@@ -6,7 +6,7 @@ icon: plug-circle-plus
 # Noodles TV Widget
 
 Real-time trading view widget from [Noodles.fi](https://noodles.fi). 
-Supports chart: **coin/usd** / **pair coin** . 
+Supports chart: **single coin ohlc** / **pair coin ohlc** . 
 Themes: light/dark.
 
 ---

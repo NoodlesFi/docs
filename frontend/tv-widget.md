@@ -5,20 +5,22 @@ icon: plug-circle-plus
 
 # Noodles TV Widget
 
-Easily embed a real-time trading view widget from [Noodles.fi](https://noodles.fi) into your website or application. This widget supports both **single coin** and **coin pair** visualizations with light or dark themes.
+Real-time trading view widget from [Noodles.fi](https://noodles.fi). 
+Supports chart: **coin/usd** / **pair coin** . 
+Themes: light/dark.
 
 ---
 
 ## Features
 
-- Real-time ohlc chart visualization  
+- Real-time ohlc chart  
 - Supports **single coin** and **trading pairs**  
 - Toggle between **light** and **dark** themes  
 - Simple integration using `<iframe>`
 
 ---
 
-## 1. Single Coin Widget
+## 1. Coin/USD Widget
 
 Displays a real-time chart for a single coin.
 

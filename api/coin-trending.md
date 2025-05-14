@@ -162,3 +162,11 @@ POST /api/v1/partner/coin-trending
     "message": "rate limit exceeded"
 }
 ```
+
+### Internal server error
+**Status Code:** `500 Internal Server Error`
+```json
+{
+    "message": "internal server error"
+}
+```

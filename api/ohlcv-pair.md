@@ -103,6 +103,14 @@ Each data entry is an array with the following structure:
 }
 ```
 
+### Internal server error
+**Status Code:** `500 Internal Server Error`
+```json
+{
+    "message": "internal server error"
+}
+```
+
 ## Notes
 - The API key for the Pro plan will have a higher rate limit and access to more APIs.
 - The `from` and `to` timestamps should be within a reasonable range to avoid performance issues. If the `from` and `to` range is too large, the data will automatically be truncated to a maximum of 500 buckets.

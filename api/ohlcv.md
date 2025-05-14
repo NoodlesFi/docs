@@ -93,6 +93,13 @@ curl --location 'https://api.noodles.fi/api/v1/partner/ohlcv?coin_id=0x027792d9f
     "message": "rate limit exceeded"
 }
 ```
+### Internal server error
+**Status Code:** `500 Internal Server Error`
+```json
+{
+    "message": "internal server error"
+}
+```
 
 ## Notes
 - The response is optimized for speed and may include only the most recent bucket that has trades, ignoring some buckets.

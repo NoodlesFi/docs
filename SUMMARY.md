@@ -12,6 +12,8 @@
 * [Coin-Trending](api/coin-trending.md)
 * [Coin-Top](api/coin-top.md)
 * [Coin-New](api/coin-new.md)
+* [Coin-Price](api/coin-price.md)
+* [Coin-Price-Multi](api/coin-price-multi.md)
 
 ## Tv Widget
 * [Tv Widget](frontend/tv-widget.md)

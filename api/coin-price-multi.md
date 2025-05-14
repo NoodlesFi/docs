@@ -1,7 +1,10 @@
 
 # Coin Price API
 
-Retrieve the latest price and 24-hour price change for a specific coin.
+Retrieve the latest price and 24-hour price change for multiple coins in a single request.
+You can use either the GET or POST method to retrieve the data. 
+
+Maximum 100 items can be requested at once. If you need to request large items, please consider using the POST method.
 
 ---
 
@@ -132,6 +135,3 @@ Each coin in the response will have a mapping of its unique identifier to its pr
 ```
 ---
 
-## Notes
-- The API supports both GET and POST methods for retrieving coin prices.
-- The GET method is limited by URL length, so for larger requests, use the POST method.

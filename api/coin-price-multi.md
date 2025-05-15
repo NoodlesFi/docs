@@ -58,7 +58,7 @@ curl --location 'https://api.noodles.fi/api/v1/partner/coin-price-multi' \
 --header 'x-chain: sui' \
 --header 'Content-Type: application/json' \
 --data '{
-    "coin_ids": ["0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP", "0x12f4f6f3b8352e1d1ba1df4d6941e8720b8e37342f95ebb7780898621f7692ab::jelly::JELLY", 
+    "coin_ids": ["0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP", "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI", 
     "006734e1fe4c43141f47326a88c748c8900ab222e8794d0dfe545a90943ee7ab::suia::SUIA"]
 }'
 ```
@@ -70,15 +70,17 @@ curl --location 'https://api.noodles.fi/api/v1/partner/coin-price-multi' \
 ### Field
 
 Each coin in the response will have a mapping of its unique identifier to its price data:
-- Key: Coin Identifier (e.g., `0x006734e1fe4c43141f47326a88c748c8900ab222e8794d0dfe545a90943ee7ab::suia::SUIA`)
+- Key: Coin Identifier (e.g., `0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI`)
 - Value: Coin Price Data
 - If the coin has no data, the value will be `null`.
 - If the coin has data, the value will be an object containing the following fields:
 
-| Field               | Type     | Nullable | Description |
-|---------------------|----------|----------|-------------|
-| `price`             | `number` | No       | Price of the coin. |
+| Field               | Type     | Nullable | Description                                        |
+|---------------------|----------|----------|----------------------------------------------------|
+| `price`             | `number` | No       | Price of the coin.                                 |
 | `price_change_24h`  | `number` | Yes      | Percentage change in price over the last 24 hours. |
+| `price_change_7d`   | `number` | Yes      | Percentage change in price over the last 7 days.   |
+| `price_change_30d`  | `number` | Yes      | Percentage change in price over the last 30 days.  |
 
 
 ### Success Response
@@ -86,13 +88,17 @@ Each coin in the response will have a mapping of its unique identifier to its pr
 {
     "data": {
         "0x006734e1fe4c43141f47326a88c748c8900ab222e8794d0dfe545a90943ee7ab::suia::SUIA": null,
-        "0x12f4f6f3b8352e1d1ba1df4d6941e8720b8e37342f95ebb7780898621f7692ab::jelly::JELLY": {
-            "price": 0.0001891571257,
-            "price_change_24h": 367.05
+        "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI": {
+            "price": 3.72,
+            "price_change_24h": -5.58,
+            "price_change_7d": -0.27,
+            "price_change_30d": 69.09
         },
         "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP": {
-            "price": 0.1996875589,
-            "price_change_24h": 0.9
+            "price": 0.1839792539,
+            "price_change_24h": -7.88,
+            "price_change_7d": -2.4,
+            "price_change_30d": 137.57
         }
     }
 }

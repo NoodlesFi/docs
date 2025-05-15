@@ -46,6 +46,8 @@ curl --location 'https://api.noodles.fi/api/v1/partner/coin-price?coin_id=0x0067
 |---------------------|----------|----------|-------------|
 | `price`             | `number` | No       | Price of the coin. |
 | `price_change_24h`  | `number` | Yes      | Percentage change in price over the last 24 hours. |
+| `price_change_7d`   | `number` | Yes      | Percentage change in price over the last 7 days.   |
+| `price_change_30d`  | `number` | Yes      | Percentage change in price over the last 30 days.  |
 
 
 
@@ -54,7 +56,9 @@ curl --location 'https://api.noodles.fi/api/v1/partner/coin-price?coin_id=0x0067
 {
     "data": {
         "price": 0.000002105688571,
-        "price_change_24h": 10.1
+        "price_change_24h": 12.1,
+        "price_change_7d": -7.2,
+        "price_change_30d": -83.3
     }
 }
 ```

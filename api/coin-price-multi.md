@@ -24,13 +24,13 @@ POST /api/v1/partner/coin-price-multi
 
 | Name       | Type   | Required | Description                                                                 |
 |------------|--------|----------|-----------------------------------------------------------------------------|
-| `coin_ids` | string | Yes      | The unique identifier of the coins, separated by commas (e.g., `0x...::module::COIN,0x...::module::COIN`). Maximum 100 items. Consider using the POST method for larger requests. (url length limit) |
+| `coin_ids` | string | Yes      | The unique identifier of the coins, separated by commas (e.g., `0x...::module::COIN,0x...::module::COIN`). Maximum 100 items. Using GET method for small items is recommended. |
 
 
 ### POST Request Parameters
 | Name      | Type   | Required | Description                                                                 |
 |-----------|--------|----------|-----------------------------------------------------------------------------|
-| `coin_ids` | string[] | Yes      | An array of unique identifiers for the coins (e.g., [`0x...::module::COIN`,`0x...::module::COIN`]). Maximum 100 items. |
+| `coin_ids` | string[] | Yes      | An array of unique identifiers for the coins (e.g., [`0x...::module::COIN`,`0x...::module::COIN`]). Maximum 100 items. Using POST method for large items is recommended. |
 
 ## **Headers**
 

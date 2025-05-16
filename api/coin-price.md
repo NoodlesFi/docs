@@ -1,7 +1,7 @@
 
 # Coin Price API
 
-Retrieve the latest price and 24-hour price change for a specific coin.
+Retrieve the latest price and price change (24-hour, 7-day, and 30-day) for a specific coin.
 
 ---
 

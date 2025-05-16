@@ -1,7 +1,7 @@
 
 # Coin Price API
 
-Retrieve the latest price and 24-hour price change for multiple coins in a single request.
+Retrieve the latest price and price change (24-hour, 7-day, and 30-day) for multiple coins in a single request.
 You can use either the GET or POST method to retrieve the data. 
 
 Maximum 100 items can be requested at once. If you need to request large items, please consider using the POST method.
@@ -24,13 +24,13 @@ POST /api/v1/partner/coin-price-multi
 
 | Name       | Type   | Required | Description                                                                 |
 |------------|--------|----------|-----------------------------------------------------------------------------|
-| `coin_ids` | string | Yes      | The unique identifier of the coins, separated by commas (e.g., `0x...::module::COIN,0x...::module::COIN`). Maximum 100 items. Using GET method for small items is recommended. |
+| `coin_ids` | string | Yes      | The unique identifier of the coins, separated by commas (e.g., `0x...::module::COIN,0x...::module::COIN`). Maximum 100 items.|
 
 
 ### POST Request Parameters
 | Name      | Type   | Required | Description                                                                 |
 |-----------|--------|----------|-----------------------------------------------------------------------------|
-| `coin_ids` | string[] | Yes      | An array of unique identifiers for the coins (e.g., [`0x...::module::COIN`,`0x...::module::COIN`]). Maximum 100 items. Using POST method for large items is recommended. |
+| `coin_ids` | string[] | Yes      | An array of unique identifiers for the coins (e.g., [`0x...::module::COIN`,`0x...::module::COIN`]). Maximum 100 items.|
 
 ## **Headers**
 
